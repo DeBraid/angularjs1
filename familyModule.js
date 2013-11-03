@@ -1,6 +1,6 @@
 var demoApp = angular.module('demoApp', []);
 
-function FamilyController($scope) {
+function FamilyController ($scope) {
   $scope.family =[
 
     {name:'derek',  city: 'Burlington', age: '29'}, 

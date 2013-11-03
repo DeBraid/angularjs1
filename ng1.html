@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="demoApp">
 <head>
   <title>Filtering an Array with ng</title>
 </head>
 
 <body>
 
-<div class="container" ng-controller="SimpleController">  
+<div class="container" ng-controller="FamilyController">  
  
   Search:
   <br />
@@ -19,10 +19,11 @@
       {{ fam.name | uppercase }} lives in {{ fam.city }}. Is currently {{ fam.age }} years old. 
     </li>
   </ul>
-
 </div>
 
-<script type="text/javascript" src="familyController.js"></script>
 <script src="angular.min.js"></script>
+<script src="familyModule.js"></script>
+
+
 </body>
 </html>
