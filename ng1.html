@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html ng-app>
 <head>
-  <title>First ng app: Test</title>
+  <title>Filtering an Array with ng</title>
 </head>
 
-<body ng-init="customers=[
-  {name:'derek',  city: 'Burlington', age: '29'}, 
-  {name:'tracy',  city: 'Beamsville', age: '30'}, 
-  {name:'bob',    city: 'Hamilton', age: '63'}, 
-  {name:'cheryl', city: 'Hamilton', age: '89'}]">
+<body>
 
-  Name:
+<div class="container" ng-controller="SimpleController">  
+ 
+  Search:
   <br />
-  <input type="text" ng-model="Search" /> {{ Search }}
+  <input type="text" ng-model="search" /> {{ Search }}
   <br />
 
   <h3>Looping through array of names</h3>
   <ul>
-    <li ng-repeat="cust in customers | filter:Search | orderBy:'age'"> {{ cust.name | uppercase }} lives in {{ cust.city }}. Is {{ cust.age }} years old. </li>
+    <li ng-repeat="fam in family | filter:search | orderBy:'age'"> 
+      {{ fam.name | uppercase }} lives in {{ fam.city }}. Is currently {{ fam.age }} years old. 
+    </li>
   </ul>
 
+</div>
 
-
-
-  <script src="angular.min.js"></script>
+<script type="text/javascript" src="familyController.js"></script>
+<script src="angular.min.js"></script>
 </body>
 </html>
