@@ -3,17 +3,25 @@
 <head>
   <title>First ng app: Test</title>
 </head>
-<body>
-  <div class="container"
-  ng-init="names=['derek', 'tracy', 'bob', 'cheryl']">
-    Name: <input type="text" ng-model="name" />
+
+<body ng-init="customers=[
+  {name:'derek',  city: 'Burlington'}, 
+  {name:'tracy',  city: 'Beamsville'}, 
+  {name:'bob',    city: 'Hamilton'}, 
+  {name:'cheryl', city: 'Hamilton' }]">
+
+  Name:
+  <br />
+  <input type="text" ng-model="name" /> {{ name }}
+  <br />
 
   <h3>Looping through array of names</h3>
   <ul>
-    <li ng-repeat="name in names | filter:name"> {{ name | uppercase }} </li>
+    <li ng-repeat="cust in customers | filter:name"> {{ cust.name | uppercase }} lives in {{ cust.city }}. </li>
   </ul>
 
-  </div>
+
+
 
   <script src="angular.min.js"></script>
 </body>
